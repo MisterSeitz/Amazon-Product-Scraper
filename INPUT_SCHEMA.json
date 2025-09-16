@@ -1,67 +1,51 @@
 {
-  "schemaVersion": 1,
-  "title": "Input schema for Amazon Product Scraper",
+  "title": "Amazon Product Scraper Input Schema",
   "type": "object",
+  "schemaVersion": 1,
   "properties": {
+    "search": {
+      "title": "Search Query",
+      "type": "string",
+      "description": "The keyword or product name to search for on Amazon.",
+      "editor": "textfield"
+    },
+    "maxItems": {
+      "title": "Maximum Items",
+      "type": "integer",
+      "description": "The maximum number of products to scrape.",
+      "default": 50
+    },
     "mode": {
-      "type": "string",
       "title": "Scraper Mode",
-      "enum": [
-        {
-          "const": "search",
-          "title": "Search for products",
-          "description": "Find products by keyword search and scrape their basic details"
-        },
-        {
-          "const": "product_urls",
-          "title": "Scrape product URLs",
-          "description": "Scrape full details from specific product pages you provide"
-        }
-      ],
-      "default": "search"
-    },
-    "marketplace": {
       "type": "string",
-      "title": "Amazon Marketplace",
+      "description": "Choose how the scraper runs.",
       "enum": [
-        { "const": "com", "title": "Amazon.com (US)", "description": "United States" },
-        { "const": "co.uk", "title": "Amazon.co.uk (UK)", "description": "United Kingdom" },
-        { "const": "de", "title": "Amazon.de (Germany)", "description": "Germany" },
-        { "const": "ca", "title": "Amazon.ca (Canada)", "description": "Canada" },
-        { "const": "com.au", "title": "Amazon.com.au (Australia)", "description": "Australia" },
-        { "const": "co.za", "title": "Amazon.co.za (South Africa)", "description": "South Africa" },
-        { "const": "in", "title": "Amazon.in (India)", "description": "India" }
+        "search",
+        "asin",
+        "url"
       ],
-      "default": "com"
+      "enumDescriptions": [
+        "Search mode: Provide a keyword to search products on Amazon.",
+        "ASIN mode: Provide one or more ASINs to scrape specific products.",
+        "URL mode: Provide a list of Amazon product URLs to scrape."
+      ]
     },
-    "keywords": {
+    "asins": {
+      "title": "ASINs",
       "type": "array",
-      "title": "Search Keywords",
-      "items": { "type": "string" }
+      "description": "List of ASINs to scrape if using 'asin' mode.",
+      "items": {
+        "type": "string"
+      }
     },
-    "productUrls": {
-      "type": "array",
+    "urls": {
       "title": "Product URLs",
-      "items": { "type": "string" }
-    },
-    "maxPagesPerKeyword": {
-      "type": "integer",
-      "title": "Max Pages per Keyword",
-      "minimum": 1,
-      "maximum": 20,
-      "default": 1
-    },
-    "concurrency": {
-      "type": "integer",
-      "title": "Concurrent Pages",
-      "minimum": 1,
-      "maximum": 30,
-      "default": 5
-    },
-    "runName": {
-      "type": "string",
-      "title": "Run Name",
-      "default": "amazon-scrape"
+      "type": "array",
+      "description": "List of Amazon product URLs to scrape if using 'url' mode.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
     }
   },
   "required": ["mode"]
