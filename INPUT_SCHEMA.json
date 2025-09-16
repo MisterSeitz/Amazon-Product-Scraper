@@ -1,13 +1,12 @@
 {
-  "title": "Amazon Product Scraper Input Schema",
+  "actorInputSchemaVersion": 1,
+  "title": "Amazon Product Scraper Input",
   "type": "object",
-  "schemaVersion": 1,
   "properties": {
     "search": {
       "title": "Search Query",
       "type": "string",
-      "description": "The keyword or product name to search for on Amazon.",
-      "editor": "textfield"
+      "description": "The keyword or product name to search for on Amazon."
     },
     "maxItems": {
       "title": "Maximum Items",
@@ -24,10 +23,10 @@
         "asin",
         "url"
       ],
-      "enumDescriptions": [
-        "Search mode: Provide a keyword to search products on Amazon.",
-        "ASIN mode: Provide one or more ASINs to scrape specific products.",
-        "URL mode: Provide a list of Amazon product URLs to scrape."
+      "enumTitles": [
+        "Search by keyword",
+        "Scrape by ASIN list",
+        "Scrape by product URLs"
       ]
     },
     "asins": {
