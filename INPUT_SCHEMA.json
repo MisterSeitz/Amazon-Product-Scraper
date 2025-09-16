@@ -3,14 +3,58 @@
   "title": "Input schema for Amazon Product Scraper",
   "type": "object",
   "properties": {
-    "mode": { "type": "string", "enum": ["search", "product_urls"], "default": "search" },
-    "marketplace": { "type": "string", "enum": ["com", "co.uk", "de", "ca", "com.au", "co.za", "in"], "default": "com" },
-    "keywords": { "type": "array", "items": {"type": "string"} },
-    "productUrls": { "type": "array", "items": {"type": "string"} },
-    "maxPagesPerKeyword": { "type": "integer", "minimum": 1, "maximum": 20, "default": 1 },
-    "concurrency": { "type": "integer", "minimum": 1, "maximum": 30, "default": 5 },
-    "runName": { "type": "string", "default": "amazon-scrape" }
+    "mode": {
+      "type": "string",
+      "title": "Scraper Mode",
+      "enum": [
+        { "const": "search", "title": "Search for products" },
+        { "const": "product_urls", "title": "Scrape specific product URLs" }
+      ],
+      "default": "search"
+    },
+    "marketplace": {
+      "type": "string",
+      "title": "Amazon Marketplace",
+      "enum": [
+        { "const": "com", "title": "Amazon.com (US)" },
+        { "const": "co.uk", "title": "Amazon.co.uk (UK)" },
+        { "const": "de", "title": "Amazon.de (Germany)" },
+        { "const": "ca", "title": "Amazon.ca (Canada)" },
+        { "const": "com.au", "title": "Amazon.com.au (Australia)" },
+        { "const": "co.za", "title": "Amazon.co.za (South Africa)" },
+        { "const": "in", "title": "Amazon.in (India)" }
+      ],
+      "default": "com"
+    },
+    "keywords": {
+      "type": "array",
+      "title": "Search Keywords",
+      "items": { "type": "string" }
+    },
+    "productUrls": {
+      "type": "array",
+      "title": "Product URLs",
+      "items": { "type": "string" }
+    },
+    "maxPagesPerKeyword": {
+      "type": "integer",
+      "title": "Max Pages per Keyword",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 1
+    },
+    "concurrency": {
+      "type": "integer",
+      "title": "Concurrent Pages",
+      "minimum": 1,
+      "maximum": 30,
+      "default": 5
+    },
+    "runName": {
+      "type": "string",
+      "title": "Run Name",
+      "default": "amazon-scrape"
+    }
   },
   "required": ["mode"]
 }
-
