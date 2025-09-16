@@ -7,8 +7,16 @@
       "type": "string",
       "title": "Scraper Mode",
       "enum": [
-        { "const": "search", "title": "Search for products" },
-        { "const": "product_urls", "title": "Scrape specific product URLs" }
+        {
+          "const": "search",
+          "title": "Search for products",
+          "description": "Find products by keyword search and scrape their basic details"
+        },
+        {
+          "const": "product_urls",
+          "title": "Scrape product URLs",
+          "description": "Scrape full details from specific product pages you provide"
+        }
       ],
       "default": "search"
     },
@@ -16,13 +24,13 @@
       "type": "string",
       "title": "Amazon Marketplace",
       "enum": [
-        { "const": "com", "title": "Amazon.com (US)" },
-        { "const": "co.uk", "title": "Amazon.co.uk (UK)" },
-        { "const": "de", "title": "Amazon.de (Germany)" },
-        { "const": "ca", "title": "Amazon.ca (Canada)" },
-        { "const": "com.au", "title": "Amazon.com.au (Australia)" },
-        { "const": "co.za", "title": "Amazon.co.za (South Africa)" },
-        { "const": "in", "title": "Amazon.in (India)" }
+        { "const": "com", "title": "Amazon.com (US)", "description": "United States" },
+        { "const": "co.uk", "title": "Amazon.co.uk (UK)", "description": "United Kingdom" },
+        { "const": "de", "title": "Amazon.de (Germany)", "description": "Germany" },
+        { "const": "ca", "title": "Amazon.ca (Canada)", "description": "Canada" },
+        { "const": "com.au", "title": "Amazon.com.au (Australia)", "description": "Australia" },
+        { "const": "co.za", "title": "Amazon.co.za (South Africa)", "description": "South Africa" },
+        { "const": "in", "title": "Amazon.in (India)", "description": "India" }
       ],
       "default": "com"
     },
