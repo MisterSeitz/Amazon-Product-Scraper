@@ -33,25 +33,26 @@
       "editor": "select"
     },
     "asins": {
-     "title": "ASINs",
-     "type": "array",
-     "description": "List of ASINs to scrape if using 'asin' mode.",
-     "items": {
-     "type": "string",
-     "enum": []
+      "title": "ASINs",
+      "type": "array",
+      "description": "List of ASINs to scrape if using 'asin' mode.",
+      "items": {
+        "type": "string",
+        "enum": []
+      },
+      "editor": "select"
+    },
+    "urls": {
+      "title": "Product URLs",
+      "type": "array",
+      "description": "List of Amazon product URLs to scrape if using 'url' mode.",
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "enum": []
+      },
+      "editor": "select"
+    }
   },
-  "editor": "select"
-},
-"urls": {
-  "title": "Product URLs",
-  "type": "array",
-  "description": "List of Amazon product URLs to scrape if using 'url' mode.",
-  "items": {
-    "type": "string",
-    "format": "uri",
-    "enum": []
-  },
-  "editor": "select"
-}
-
+  "required": ["mode"]
 }
