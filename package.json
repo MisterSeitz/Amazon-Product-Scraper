@@ -6,6 +6,6 @@
   "scripts": { "start": "node main.js" },
   "dependencies": {
    "apify": "^2.3.2",
-   "puppeteer": "^20.7.0"
+   "puppeteer": "^13.7.0"
   }
 }
