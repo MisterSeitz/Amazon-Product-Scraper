@@ -1,4 +1,5 @@
 {
+  "schemaVersion": 1,
   "title": "Input schema for Amazon Product Scraper",
   "type": "object",
   "properties": {
@@ -12,3 +13,4 @@
   },
   "required": ["mode"]
 }
+
