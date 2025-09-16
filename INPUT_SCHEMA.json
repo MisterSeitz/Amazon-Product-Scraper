@@ -6,13 +6,15 @@
     "search": {
       "title": "Search Query",
       "type": "string",
-      "description": "The keyword or product name to search for on Amazon."
+      "description": "The keyword or product name to search for on Amazon.",
+      "editor": "textfield"
     },
     "maxItems": {
       "title": "Maximum Items",
       "type": "integer",
       "description": "The maximum number of products to scrape.",
-      "default": 50
+      "default": 50,
+      "editor": "number"
     },
     "mode": {
       "title": "Scraper Mode",
@@ -27,7 +29,8 @@
         "Search by keyword",
         "Scrape by ASIN list",
         "Scrape by product URLs"
-      ]
+      ],
+      "editor": "select"
     },
     "asins": {
       "title": "ASINs",
@@ -35,7 +38,8 @@
       "description": "List of ASINs to scrape if using 'asin' mode.",
       "items": {
         "type": "string"
-      }
+      },
+      "editor": "textarea"
     },
     "urls": {
       "title": "Product URLs",
@@ -44,7 +48,8 @@
       "items": {
         "type": "string",
         "format": "uri"
-      }
+      },
+      "editor": "textarea"
     }
   },
   "required": ["mode"]
