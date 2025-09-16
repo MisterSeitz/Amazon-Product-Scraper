@@ -1,0 +1,5 @@
+{
+  "mode": "product_urls",
+  "productUrls": ["https://www.amazon.com/dp/B07PGL2ZSL"],
+  "concurrency": 2
+}

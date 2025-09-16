@@ -1,0 +1,8 @@
+{
+  "name": "amazon-product-scraper",
+  "version": "1.0.0",
+  "description": "Apify Actor: Amazon Product & Search Scraper (ready to deploy)",
+  "main": "main.js",
+  "scripts": { "start": "node main.js" },
+  "dependencies": { "apify": "^2.4.0" }
+}

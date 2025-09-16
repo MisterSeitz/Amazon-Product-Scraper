@@ -1,0 +1,14 @@
+{
+  "title": "Input schema for Amazon Product Scraper",
+  "type": "object",
+  "properties": {
+    "mode": { "type": "string", "enum": ["search", "product_urls"], "default": "search" },
+    "marketplace": { "type": "string", "enum": ["com", "co.uk", "de", "ca", "com.au", "co.za", "in"], "default": "com" },
+    "keywords": { "type": "array", "items": {"type": "string"} },
+    "productUrls": { "type": "array", "items": {"type": "string"} },
+    "maxPagesPerKeyword": { "type": "integer", "minimum": 1, "maximum": 20, "default": 1 },
+    "concurrency": { "type": "integer", "minimum": 1, "maximum": 30, "default": 5 },
+    "runName": { "type": "string", "default": "amazon-scrape" }
+  },
+  "required": ["mode"]
+}

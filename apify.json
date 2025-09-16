@@ -1,0 +1,9 @@
+{
+  "name": "amazon-product-scraper",
+  "version": "1.0.0",
+  "buildTag": "v1.0.0",
+  "buildCommand": "npm ci",
+  "runCommand": "node main.js",
+  "memory": 512,
+  "timeout": 3600
+}

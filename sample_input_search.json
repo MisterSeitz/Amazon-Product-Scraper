@@ -1,0 +1,7 @@
+{
+  "mode": "search",
+  "marketplace": "com",
+  "keywords": ["wireless earbuds", "gaming mouse"],
+  "maxPagesPerKeyword": 1,
+  "concurrency": 3
+}
