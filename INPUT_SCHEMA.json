@@ -1,5 +1,5 @@
 {
-  "actorInputSchemaVersion": 1,
+  "schemaVersion": 1,
   "title": "Amazon Product Scraper Input",
   "type": "object",
   "properties": {
